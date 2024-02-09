@@ -1,0 +1,20 @@
+---
+name: Podman / Docker
+# yamllint disable-line rule:truthy
+on: [push]
+jobs:
+  test_latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker
+        run: which docker && docker --version
+      - name: Podman
+        run: which podman && podman --version
+  test_other:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Docker
+        run: which docker && docker --version
+      - name: Podman
+        run: which podman && podman --version
+      
